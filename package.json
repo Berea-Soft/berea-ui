@@ -4,7 +4,8 @@
   "version": "0.0.7",
   "type": "module",
   "files": [
-    "dist"
+    "dist",
+    "dist/berea-ui.css"
   ],
   "main": "dist/berea-ui.cjs",
   "module": "dist/berea-ui.es.js",
@@ -14,7 +15,7 @@
       "import": "./dist/berea-ui.es.js",
       "require": "./dist/berea-ui.cjs"
     },
-    "./style": {
+    "./berea-ui.css": {
       "import": "./dist/berea-ui.css"
     },
     "./components/*": {

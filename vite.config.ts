@@ -18,6 +18,8 @@ export default defineConfig({
     dts({
       rollupTypes: true,
       insertTypesEntry: true,
+      outDir: "dist",
+      include: ["src/**/*"],
     }),
     AutoImport({
       include: [

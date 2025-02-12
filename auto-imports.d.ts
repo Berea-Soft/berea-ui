@@ -9,8 +9,6 @@ declare global {
   const BeButton: typeof import('./src/components/index')['BeButton']
   const BeIcon: typeof import('./src/components/index')['BeIcon']
   const BeLoading: typeof import('./src/components/index')['BeLoading']
-  const Button: typeof import('./src/components/Button/index')['default']
-  const Icon: typeof import('./src/components/Icon/index')['default']
   const VueInstance: typeof import('./src/utils/config')['VueInstance']
   const cn: typeof import('./src/utils/utils')['cn']
   const components: typeof import('./src/components/index')['default']
@@ -20,14 +18,10 @@ declare global {
   const generatePagination: typeof import('./src/utils/utils')['generatePagination']
   const generateYAxis: typeof import('./src/utils/utils')['generateYAxis']
   const getComponent: typeof import('./src/components/index')['getComponent']
-  const nuxt: typeof import('./src/nuxt')['default']
   const processVariant: typeof import('./src/utils/helpers')['processVariant']
-  const registerComponentProgrammatic: typeof import('./src/utils/plugin')['registerComponentProgrammatic']
-  const registerComponents: typeof import('./src/utils/plugin')['registerComponents']
   const setOptions: typeof import('./src/utils/config')['setOptions']
   const setVueInstance: typeof import('./src/utils/config')['setVueInstance']
-  const src: typeof import('./src/index')['default']
-  const use: typeof import('./src/utils/plugin')['use']
+  const styleD: typeof import('./src/types/style.d')['default']
 }
 // for type re-export
 declare global {
@@ -59,5 +53,6 @@ declare module 'vue' {
     readonly processVariant: UnwrapRef<typeof import('./src/utils/helpers')['processVariant']>
     readonly setOptions: UnwrapRef<typeof import('./src/utils/config')['setOptions']>
     readonly setVueInstance: UnwrapRef<typeof import('./src/utils/config')['setVueInstance']>
+    readonly styleD: UnwrapRef<typeof import('./src/types/style.d')['default']>
   }
 }
