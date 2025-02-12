@@ -6,22 +6,18 @@
   "files": [
     "dist"
   ],
-  "main": "dist/berea-ui.umd.js",
+  "main": "dist/berea-ui.cjs",
   "module": "dist/berea-ui.es.js",
   "types": "dist/berea-ui.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/berea-ui.js",
-      "require": "./dist/berea-ui.umd.js"
+      "import": "./dist/berea-ui.es.js",
+      "require": "./dist/berea-ui.cjs"
     },
     "./style": "./dist/berea-ui.css",
     "./components/*": {
       "types": "./dist/components/*.d.ts",
       "import": "./dist/components/*.js"
-    },
-    "./nuxt": {
-      "import": "./dist/nuxt/berea-ui.js",
-      "require": "./dist/nuxt/berea-ui.umd.js"
     }
   },
   "keywords": [
@@ -47,13 +43,10 @@
     "publish:npm": "npm publish",
     "publish:local": "npm pack",
     "postrelease": "git push --follow-tags origin main && npm publish",
-    "release-and-publish": "npm run release && npm run publish:npm",
     "lint": "eslint --ext .ts,.js,.vue --ignore-path .gitignore .",
     "lint:fix": "eslint --ext .ts,.js,.vue --ignore-path .gitignore --fix ."
   },
-  "dependencies": {
-    "@bereaui/berea-ui": "file:",
-    "lucide-vue-next": "^0.475.0",
+  "peerDependencies": {
     "vue": "^3.5.13"
   },
   "devDependencies": {
@@ -63,6 +56,7 @@
     "autoprefixer": "^10.4.20",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "lucide-vue-next": "^0.475.0",
     "postcss": "^8.5.1",
     "sass": "^1.84.0",
     "standard-version": "^9.5.0",
@@ -77,7 +71,10 @@
     "vite-tsconfig-paths": "^5.1.4",
     "vue-tsc": "^2.2.0"
   },
-  "description": "This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.",
+  "description": "Berea UI - Component Library for Vue 3",
   "author": "John Andrade <johnandrade@bereasoft.com>",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "@bereaui/berea-ui": "file:"
+  }
 }

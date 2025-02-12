@@ -55,13 +55,13 @@ export default defineConfig({
     lib: {
       entry: "src/components/index.ts",
       name: "berea-ui",
-      fileName: (format) => `berea-ui.${format}.js`,
+      fileName: (format) => `berea-ui.${format === "cjs" ? "cjs": `${format}.js`}`,
+      formats: ["es", "cjs", "umd"],
     },
     rollupOptions: {
       external: ["vue"],
       input: "src/components/index.ts",
       output: {
-        format: "esm",
         exports: "named",
         globals: {
           vue: "Vue"
