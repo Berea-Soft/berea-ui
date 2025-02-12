@@ -14,7 +14,9 @@
       "import": "./dist/berea-ui.es.js",
       "require": "./dist/berea-ui.cjs"
     },
-    "./style": "./dist/berea-ui.css",
+    "./style": {
+      "import": "./dist/berea-ui.css"
+    },
     "./components/*": {
       "types": "./dist/components/*.d.ts",
       "import": "./dist/components/*.js"

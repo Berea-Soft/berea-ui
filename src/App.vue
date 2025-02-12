@@ -12,6 +12,7 @@
     rounded="md"
     disabled
     iconSize="lg"
+    expanded
     :iconLeft="AlarmPlus"
   >
     Primary
