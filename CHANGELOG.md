@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.6](https://github.com/Berea-Soft/berea-ui/compare/v0.0.5...v0.0.6) (2025-02-12)
+
+
+### Bug Fixes
+
+* :wrench: change setting package ([5ef9bc9](https://github.com/Berea-Soft/berea-ui/commit/5ef9bc91e9bf20e4dbe5fa8ec6bbef1b5c7fc7f8))
+
 ### [0.0.5](https://github.com/Berea-Soft/berea-ui/compare/v0.0.4...v0.0.5) (2025-02-12)
 
 
