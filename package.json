@@ -1,7 +1,7 @@
 {
   "name": "berea-ui",
   "private": false,
-  "version": "0.0.0",
+  "version": "0.0.1",
   "type": "module",
   "files": [
     "dist"
@@ -46,6 +46,7 @@
     "release:patch": "standard-version --release-as patch",
     "publish:npm": "npm publish",
     "publish:local": "npm pack",
+    "postrelease": "git push --follow-tags origin main && npm run publish:npm",
     "release-and-publish": "npm run release && npm run publish:npm",
     "lint": "eslint --ext .ts,.js,.vue --ignore-path .gitignore .",
     "lint:fix": "eslint --ext .ts,.js,.vue --ignore-path .gitignore --fix ."
