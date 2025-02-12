@@ -1,5 +1,5 @@
 {
-  "name": "berea-ui",
+  "name": "@bereaui/berea-ui",
   "private": false,
   "version": "0.0.2",
   "type": "module",
@@ -52,8 +52,7 @@
     "lint:fix": "eslint --ext .ts,.js,.vue --ignore-path .gitignore --fix ."
   },
   "dependencies": {
-    "@nuxt/kit": "^3.15.4",
-    "berea-ui": "file:",
+    "@bereaui/berea-ui": "file:",
     "lucide-vue-next": "^0.475.0",
     "vue": "^3.5.13"
   },
@@ -79,6 +78,6 @@
     "vue-tsc": "^2.2.0"
   },
   "description": "This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.",
-  "author": "John Andrade <sistemas@johnandrade.com>",
+  "author": "John Andrade <johnandrade@bereasoft.com>",
   "license": "ISC"
 }
