@@ -35,9 +35,6 @@ declare global {
   export type { Config } from './src/interfaces/config.interface'
   import('./src/interfaces/config.interface')
   // @ts-ignore
-  export type { ExtendableProps, InheritableElementProps, PolymorphicComponentProps, PolymorphicRef, PolymorphicComponentPropsWithRef } from './src/utils/polmorphicsTypes'
-  import('./src/utils/polmorphicsTypes')
-  // @ts-ignore
   export type { Revenue, Locales, Currencies } from './src/utils/utils'
   import('./src/utils/utils')
 }
