@@ -1,0 +1,83 @@
+{
+  "name": "berea-ui",
+  "private": false,
+  "version": "0.0.0",
+  "type": "module",
+  "files": [
+    "dist"
+  ],
+  "main": "dist/berea-ui.umd.js",
+  "module": "dist/berea-ui.es.js",
+  "types": "dist/berea-ui.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/berea-ui.js",
+      "require": "./dist/berea-ui.umd.js"
+    },
+    "./style": "./dist/berea-ui.css",
+    "./components/*": {
+      "types": "./dist/components/*.d.ts",
+      "import": "./dist/components/*.js"
+    },
+    "./nuxt": {
+      "import": "./dist/nuxt/berea-ui.js",
+      "require": "./dist/nuxt/berea-ui.umd.js"
+    }
+  },
+  "keywords": [
+    "vue",
+    "vue3",
+    "tailwindcss",
+    "vite",
+    "ui",
+    "components",
+    "design",
+    "system",
+    "berea",
+    "berea-ui"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc -b && vite build",
+    "preview": "vite preview",
+    "release": "standard-version",
+    "release:major": "standard-version --release-as major",
+    "release:minor": "standard-version --release-as minor",
+    "release:patch": "standard-version --release-as patch",
+    "publish:npm": "npm publish",
+    "publish:local": "npm pack",
+    "release-and-publish": "npm run release && npm run publish:npm",
+    "lint": "eslint --ext .ts,.js,.vue --ignore-path .gitignore .",
+    "lint:fix": "eslint --ext .ts,.js,.vue --ignore-path .gitignore --fix ."
+  },
+  "dependencies": {
+    "@nuxt/kit": "^3.15.4",
+    "berea-ui": "file:",
+    "lucide-vue-next": "^0.475.0",
+    "vue": "^3.5.13"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.1",
+    "@vitejs/plugin-vue": "^5.2.1",
+    "@vue/tsconfig": "^0.7.0",
+    "autoprefixer": "^10.4.20",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "postcss": "^8.5.1",
+    "sass": "^1.84.0",
+    "standard-version": "^9.5.0",
+    "tailwind-merge": "^3.0.1",
+    "tailwindcss": "^3.4.17",
+    "typescript": "~5.7.2",
+    "unplugin-auto-import": "^19.0.0",
+    "unplugin-vue-components": "^28.0.0",
+    "vite": "^6.1.0",
+    "vite-plugin-dts": "^4.5.0",
+    "vite-plugin-vue-devtools": "^7.7.1",
+    "vite-tsconfig-paths": "^5.1.4",
+    "vue-tsc": "^2.2.0"
+  },
+  "description": "This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.",
+  "author": "John Andrade <sistemas@johnandrade.com>",
+  "license": "ISC"
+}
