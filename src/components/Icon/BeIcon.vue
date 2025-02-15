@@ -15,9 +15,9 @@
 </template>
 
 <script lang="ts" setup>
-  import { defineComponent, computed, defineProps } from "vue";
+  import { computed, defineProps } from "vue";
 
-  defineComponent({
+  defineOptions({
     name: "BeIcon",
   });
 

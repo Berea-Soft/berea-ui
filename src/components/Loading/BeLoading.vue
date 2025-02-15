@@ -1,10 +1,10 @@
 <script lang="ts" setup>
   import { cn } from "../../utils/utils";
   import { cva } from "class-variance-authority";
-  import { computed, defineComponent } from "vue";
+  import { computed } from "vue";
   import BeIcon from "../Icon/BeIcon.vue"; // Importa el componente Icon
 
-  defineComponent({
+  defineOptions({
     name: "BeLoading",
     components: {
       BeIcon,
