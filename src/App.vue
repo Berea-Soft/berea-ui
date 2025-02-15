@@ -1,5 +1,5 @@
 <script setup lang="ts">
-  import BeButton from "./components";
+  import { BeButton } from "./components";
   import { AlarmPlus } from "lucide-vue-next";
 </script>
 
