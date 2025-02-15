@@ -4,7 +4,11 @@ import BeIcon from "@/components/Icon/BeIcon.vue";
 import BeLoading from "@/components/Loading/BeLoading.vue";
 import "../berea-ui.css";
 
-const components: Record<string, any> = [BeButton, BeIcon, BeLoading];
+const components: Record<string, any> = {
+  BeButton,
+  BeIcon,
+  BeLoading,
+};
 
 const install: Plugin = (app) => {
   Object.entries(components).forEach(([name, component]) => {
@@ -21,8 +25,5 @@ const getComponent = (name: string) => {
 
 export { getComponent, BeButton, BeIcon, BeLoading };
 
-export default {
-  install,
-  getComponent,
-  components,
-};
+export default install
+

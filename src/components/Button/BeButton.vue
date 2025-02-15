@@ -1,12 +1,12 @@
 <script lang="ts" setup>
-  import { computed, ref, useAttrs, PropType, watch } from "vue";
+  import { computed, ref, useAttrs, PropType, watch, defineComponent } from "vue";
   import { cva, type VariantProps } from "class-variance-authority";
   import { cn } from "../../utils/utils";
   import { config } from "../../utils/config";
   import { processVariant } from "../../utils/helpers";
   import BeLoading from "../Loading/BeLoading.vue";
 
-  defineOptions({
+  defineComponent({
     name: "BeButton",
   });
 

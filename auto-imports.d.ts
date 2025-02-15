@@ -9,16 +9,17 @@ declare global {
   const BeButton: typeof import('./src/components/index')['BeButton']
   const BeIcon: typeof import('./src/components/index')['BeIcon']
   const BeLoading: typeof import('./src/components/index')['BeLoading']
+  const Button: typeof import('./src/components/Button/index')['default']
+  const Icon: typeof import('./src/components/Icon/index')['default']
+  const Loading: typeof import('./src/components/Loading/index')['default']
   const VueInstance: typeof import('./src/utils/config')['VueInstance']
   const cn: typeof import('./src/utils/utils')['cn']
   const components: typeof import('./src/components/index')['default']
   const config: typeof import('./src/utils/config')['config']
-  const formatCurrency: typeof import('./src/utils/utils')['formatCurrency']
-  const formatDateToLocal: typeof import('./src/utils/utils')['formatDateToLocal']
-  const generatePagination: typeof import('./src/utils/utils')['generatePagination']
-  const generateYAxis: typeof import('./src/utils/utils')['generateYAxis']
   const getComponent: typeof import('./src/components/index')['getComponent']
   const processVariant: typeof import('./src/utils/helpers')['processVariant']
+  const registerComponent: typeof import('./src/utils/plugins')['registerComponent']
+  const registerComponentProgrammatic: typeof import('./src/utils/plugins')['registerComponentProgrammatic']
   const setOptions: typeof import('./src/utils/config')['setOptions']
   const setVueInstance: typeof import('./src/utils/config')['setVueInstance']
   const styleD: typeof import('./src/types/style.d')['default']
@@ -28,9 +29,6 @@ declare global {
   // @ts-ignore
   export type { Config } from './src/interfaces/config.interface'
   import('./src/interfaces/config.interface')
-  // @ts-ignore
-  export type { Revenue, Locales, Currencies } from './src/utils/utils'
-  import('./src/utils/utils')
 }
 
 // for vue template auto import
@@ -41,16 +39,17 @@ declare module 'vue' {
     readonly BeButton: UnwrapRef<typeof import('./src/components/index')['BeButton']>
     readonly BeIcon: UnwrapRef<typeof import('./src/components/index')['BeIcon']>
     readonly BeLoading: UnwrapRef<typeof import('./src/components/index')['BeLoading']>
+    readonly Button: UnwrapRef<typeof import('./src/components/Button/index')['default']>
+    readonly Icon: UnwrapRef<typeof import('./src/components/Icon/index')['default']>
+    readonly Loading: UnwrapRef<typeof import('./src/components/Loading/index')['default']>
     readonly VueInstance: UnwrapRef<typeof import('./src/utils/config')['VueInstance']>
     readonly cn: UnwrapRef<typeof import('./src/utils/utils')['cn']>
     readonly components: UnwrapRef<typeof import('./src/components/index')['default']>
     readonly config: UnwrapRef<typeof import('./src/utils/config')['config']>
-    readonly formatCurrency: UnwrapRef<typeof import('./src/utils/utils')['formatCurrency']>
-    readonly formatDateToLocal: UnwrapRef<typeof import('./src/utils/utils')['formatDateToLocal']>
-    readonly generatePagination: UnwrapRef<typeof import('./src/utils/utils')['generatePagination']>
-    readonly generateYAxis: UnwrapRef<typeof import('./src/utils/utils')['generateYAxis']>
     readonly getComponent: UnwrapRef<typeof import('./src/components/index')['getComponent']>
     readonly processVariant: UnwrapRef<typeof import('./src/utils/helpers')['processVariant']>
+    readonly registerComponent: UnwrapRef<typeof import('./src/utils/plugins')['registerComponent']>
+    readonly registerComponentProgrammatic: UnwrapRef<typeof import('./src/utils/plugins')['registerComponentProgrammatic']>
     readonly setOptions: UnwrapRef<typeof import('./src/utils/config')['setOptions']>
     readonly setVueInstance: UnwrapRef<typeof import('./src/utils/config')['setVueInstance']>
     readonly styleD: UnwrapRef<typeof import('./src/types/style.d')['default']>
