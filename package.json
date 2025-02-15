@@ -8,11 +8,11 @@
     "dist/berea-ui.css"
   ],
   "main": "dist/berea-ui.cjs",
-  "module": "dist/berea-ui.es.js",
+  "module": "dist/berea-ui.js",
   "types": "dist/berea-ui.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/berea-ui.es.js",
+      "import": "./dist/berea-ui.js",
       "require": "./dist/berea-ui.cjs"
     },
     "./umd": {
