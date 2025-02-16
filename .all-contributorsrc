@@ -11,7 +11,7 @@
     "commitConvention": "none",
     "contributors": [
       {
-        "login": "johnandrade",
+        "login": "johnandrade18",
         "name": "John Andrade",
         "avatar_url": "https://avatars.githubusercontent.com/u/10930368?v=4",
         "profile": "https://bereaui.com/",
@@ -20,6 +20,6 @@
         ]
       }
     ],
-    "contributorsPerLine": 8
+    "contributorsPerLine": 1
   }
   
