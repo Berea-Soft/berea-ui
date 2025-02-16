@@ -39,9 +39,6 @@ declare module 'vue' {
     readonly BeButton: UnwrapRef<typeof import('./src/components/index')['BeButton']>
     readonly BeIcon: UnwrapRef<typeof import('./src/components/index')['BeIcon']>
     readonly BeLoading: UnwrapRef<typeof import('./src/components/index')['BeLoading']>
-    readonly Button: UnwrapRef<typeof import('./src/components/Button/index')['default']>
-    readonly Icon: UnwrapRef<typeof import('./src/components/Icon/index')['default']>
-    readonly Loading: UnwrapRef<typeof import('./src/components/Loading/index')['default']>
     readonly VueInstance: UnwrapRef<typeof import('./src/utils/config')['VueInstance']>
     readonly cn: UnwrapRef<typeof import('./src/utils/utils')['cn']>
     readonly components: UnwrapRef<typeof import('./src/components/index')['default']>

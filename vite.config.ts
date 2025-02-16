@@ -1,5 +1,4 @@
-import { dirname, resolve, join } from "node:path";
-import * as fs from "node:fs";
+import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { AliasOptions, defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
@@ -11,35 +10,14 @@ import dts from "vite-plugin-dts";
 import pack from "./package.json";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
-const buildMode = process.env.BUILD_MODE; 
 
 const banner = `/*! berea-ui v${
   pack.version
 } | (c) ${new Date().getFullYear()} Berea UI | MIT License | github.com/@bereaui/berea-ui */`;
 
-const baseFolder = "./src/";
-const componentsFolder = "components/";
-
-const components = fs
-  .readdirSync(baseFolder + componentsFolder)
-  .filter((file) =>
-    fs.statSync(join(baseFolder + componentsFolder, file)).isDirectory()
-  );
-
-const multipleEntries = components.reduce(
-  (acc, component) => ({
-    ...acc,
-    [`components/${component}/index`]: resolve(
-      __dirname,
-      `src/components/${component}/index.ts`
-    ),
-  }),
-  {}
-);
-
 const singleEntry = resolve(__dirname, "src/components/index.ts");
 
-const baseConfig = {
+export default defineConfig({
   plugins: [
     vue(),
     vueDevTools(),
@@ -49,6 +27,17 @@ const baseConfig = {
       insertTypesEntry: true,
       outDir: "dist",
       include: ["src/**/*"],
+      exclude: ["src/**/*.stories.ts", "src/**/*.test.ts"],
+      beforeWriteFile: (filePath, content) => {
+        // Para archivos en la raíz
+        if (filePath.includes("berea-ui.d.ts")) {
+          return { filePath, content };
+        }
+        // Para componentes individuales
+        const newPath = filePath.replace(/\.vue\.d\.ts$/, ".d.ts");
+        return { filePath: newPath, content };
+      },
+      tsconfigPath: "./tsconfig.json",
     }),
     AutoImport({
       include: [
@@ -81,52 +70,15 @@ const baseConfig = {
     alias: {
       "@/": resolve(__dirname, "src/"),
     } as AliasOptions,
+    dedupe: ["vue", "berea-ui"],
   },
-};
-
-const config = defineConfig({
-  ...baseConfig,
-  build: buildMode === "bundle" ? {
-    rollupOptions: {
-      external: ["vue"],
-      input: {
-        "berea-ui": singleEntry,
-        ...multipleEntries,
-      },
-      output: [
-        {
-          format: "es",
-          dir: "dist",
-          exports: "named",
-          globals: {
-            vue: "Vue",
-          },
-          banner,
-          entryFileNames: ({ name }) => `${name}.js`,
-          assetFileNames: `[name][extname]`,
-        },
-        {
-          format: "cjs",
-          dir: "dist",
-          exports: "named",
-          globals: {
-            vue: "Vue",
-          },
-          banner,
-          entryFileNames: ({ name }) => `${name}.cjs`,
-          assetFileNames: `[name][extname]`,
-        },
-      ],
-    },
-    emptyOutDir: true,
-  } : {
-    outDir: "dist/modular",
-    emptyOutDir: true,
+  build: {
+    outDir: "dist",
     lib: {
       entry: singleEntry,
       name: "BereaUi",
-      fileName: (format) => `berea-ui.${format}.js`,
-      formats: ["umd", "iife"],
+      fileName: (format) => `berea-ui.${format === "cjs" ? "cjs" : `${format}.js`}`,
+      formats: ["es", "cjs", "umd", "iife"],
     },
     rollupOptions: {
       external: ["vue"],
@@ -135,9 +87,16 @@ const config = defineConfig({
           vue: "Vue",
         },
         banner,
+        exports: "named",
+        dir: "dist",
+        assetFileNames: "[name].[ext]",
       },
     },
+    emptyOutDir: true,
+    sourcemap: true,
+  },
+  optimizeDeps: {
+    include: ["vue"],
+    exclude: ["**/*.stories.ts", "**/*.test.ts", "node_modules/**"],
   },
 });
-
-export default config;

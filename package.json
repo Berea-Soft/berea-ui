@@ -5,30 +5,39 @@
   "type": "module",
   "files": [
     "dist",
-    "dist/berea-ui.css"
+    "src",
+    "dist/berea-ui.css",
+    "dist/berea-ui.umd.js",
+    "dist/berea-ui.iife.js",
+    "dist/berea-ui.es.js",
+    "dist/berea-ui.cjs",
+    "dist/berea-ui.d.ts"
   ],
   "main": "dist/berea-ui.cjs",
-  "module": "dist/berea-ui.js",
+  "module": "dist/berea-ui.es.js",
   "types": "dist/berea-ui.d.ts",
+  "unpkg": "dist/berea-ui.umd.js",
+  "browser": {
+    "./dist/berea-ui.css": "./dist/berea-ui.css",
+    "./dist/berea-ui.umd.js": "./dist/berea-ui.umd.js",
+    "./dist/berea-ui.iife.js": "./dist/berea-ui.iife.js"
+  },
+  "typings": "dist/berea-ui.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/berea-ui.js",
+      "import": "./dist/berea-ui.es.js",
       "require": "./dist/berea-ui.cjs"
-    },
-    "./umd": {
-      "import": "./dist/modular/berea-ui.umd.js",
-      "require": "./dist/modular/berea-ui.umd.js"
-    },
-    "./iife": {
-      "import": "./dist/modular/berea-ui.iife.js",
-      "require": "./dist/modular/berea-ui.iife.js"
     },
     "./berea-ui.css": {
       "import": "./dist/berea-ui.css"
     },
-    "./components/*": {
-      "types": "./dist/components/*.d.ts",
-      "import": "./dist/components/*.js"
+    "./umd": {
+      "import": "./dist/berea-ui.umd.js",
+      "require": "./dist/berea-ui.umd.js"
+    },
+    "./iife": {
+      "import": "./dist/berea-ui.iife.js",
+      "require": "./dist/berea-ui.iife.js"
     }
   },
   "keywords": [
@@ -45,9 +54,7 @@
   ],
   "scripts": {
     "dev": "vite",
-    "build:bundle": "vue-tsc -b & cross-env BUILD_MODE=bundle vite build",
-    "build:module": "vue-tsc -b & vite build ",
-    "build": " npm run build:bundle && npm run build:module",
+    "build": "vue-tsc -b & vite build --mode production",
     "preview": "vite preview",
     "release": "standard-version",
     "release:major": "standard-version --release-as major",
@@ -69,10 +76,8 @@
     "autoprefixer": "^10.4.20",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
-    "cross-env": "^7.0.3",
     "lucide-vue-next": "^0.475.0",
     "postcss": "^8.5.1",
-    "sass": "^1.84.0",
     "standard-version": "^9.5.0",
     "tailwind-merge": "^3.0.1",
     "tailwindcss": "^3.4.17",
@@ -80,16 +85,47 @@
     "unplugin-auto-import": "^19.0.0",
     "unplugin-vue-components": "^28.0.0",
     "vite": "^6.1.0",
-    "vite-plugin-babel": "^1.3.0",
     "vite-plugin-dts": "^4.5.0",
     "vite-plugin-vue-devtools": "^7.7.1",
     "vite-tsconfig-paths": "^5.1.4",
     "vue-tsc": "^2.2.0"
   },
-  "description": "Berea UI - Component Library for Vue 3",
+  "description": "Berea UI - Component Library for Vue 3 based on Tailwind CSS",
+  "homepage": "https://bereaui.com/",
   "author": "John Andrade <johnandrade@bereasoft.com>",
-  "license": "ISC",
-  "dependencies": {
-    "@bereaui/berea-ui": "file:"
-  }
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Berea-Soft/berea-ui"
+  },
+  "bugs": {
+    "url": "https://github.com/Berea-Soft/berea-ui/issues"
+  },
+  "maintainers": [
+    {
+      "name": "John Andrade",
+      "email": "johnandrade@bereasoft.com"
+    }
+  ],
+  "sideEffects": [
+    "*.css"
+  ],
+  "lint-staged": {
+    "*.{js,ts,vue}": [
+      "eslint --fix"
+    ]
+  },
+  "pre-commit": [
+    "lint:stage"
+  ],
+  "engines": {
+    "node": ">=20.18.0",
+    "npm": ">=10.8.2"
+  },
+  "license": "MIT",
+  "browserslist": [
+    "last 2 versions",
+    "not dead",
+    "not IE 11",
+    "> 1%"
+  ]
 }
