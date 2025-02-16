@@ -1,0 +1,25 @@
+{
+    "projectName": "berea-ui",
+    "projectOwner": "Berea-Soft",
+    "repoType": "github",
+    "repoHost": "https://github.com",
+    "files": [
+      "README.md"
+    ],
+    "imageSize": 38,
+    "commit": false,
+    "commitConvention": "none",
+    "contributors": [
+      {
+        "login": "johnandrade",
+        "name": "John Andrade",
+        "avatar_url": "https://avatars.githubusercontent.com/u/10930368?v=4",
+        "profile": "https://bereaui.com/",
+        "contributions": [
+          "code", "documentation"
+        ]
+      }
+    ],
+    "contributorsPerLine": 8
+  }
+  
