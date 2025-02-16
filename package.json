@@ -26,18 +26,21 @@
   "exports": {
     ".": {
       "import": "./dist/berea-ui.es.js",
-      "require": "./dist/berea-ui.cjs"
+      "require": "./dist/berea-ui.cjs",
+      "types": "./dist/berea-ui.d.ts"
     },
     "./berea-ui.css": {
       "import": "./dist/berea-ui.css"
     },
     "./umd": {
       "import": "./dist/berea-ui.umd.js",
-      "require": "./dist/berea-ui.umd.js"
+      "require": "./dist/berea-ui.umd.js",
+      "types": "./dist/berea-ui.d.ts"
     },
     "./iife": {
       "import": "./dist/berea-ui.iife.js",
-      "require": "./dist/berea-ui.iife.js"
+      "require": "./dist/berea-ui.iife.js",
+      "types": "./dist/berea-ui.d.ts"
     }
   },
   "keywords": [
