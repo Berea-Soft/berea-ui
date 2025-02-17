@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.23](https://github.com/Berea-Soft/berea-ui/compare/v0.0.22...v0.0.23) (2025-02-17)
+
+
+### Features
+
+* :sparkles: add component switch ([7242495](https://github.com/Berea-Soft/berea-ui/commit/724249584fc2c439859c827a360d18e278bb23cc))
+
 ### [0.0.22](https://github.com/Berea-Soft/berea-ui/compare/v0.0.21...v0.0.22) (2025-02-17)
 
 
