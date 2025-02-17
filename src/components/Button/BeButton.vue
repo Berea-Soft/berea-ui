@@ -95,10 +95,14 @@
       type: String as () => VariantProps<typeof icon>["size"],
       default: "md",
     },
+    between: {
+      type: Boolean,
+      default: false,
+    },
   });
 
   const emit = defineEmits(["click"]);
-  const attrs = useAttrs();
+  const attrs = useAttrs() as Record<string, unknown>;
   const variantProps = ref(props.variant);
   const outlineProps = ref(props.outline);
   const roundedProps = ref(props.rounded);
@@ -113,6 +117,7 @@
   const iconRightClassProps = ref(props.iconRightClass);
   const iconSizeProps = ref(props.iconSize);
   const expandedProps = ref(props.expanded);
+  const betweenProps = ref(props.between);
 
   watch(
     () => props.variant,
@@ -172,6 +177,13 @@
     (value) => (expandedProps.value = value)
   );
 
+  watch(
+    () => props.between,
+    (value) => {
+      if (value)  (betweenProps.value = value);
+    }
+  )
+
   const button = cva(
     "inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 gap-2",
     {
@@ -201,6 +213,9 @@
         },
         expanded: {
           true: "w-full",
+        },
+        between: {
+          true : "justify-between"
         },
         rounded: {
           basic: "rounded-none",
@@ -325,6 +340,7 @@
         rounded: roundedProps.value,
         size: sizeProps.value,
         expanded: expandedProps.value,
+        between: betweenProps.value
       }) as string,
       classProps.value as string
     );

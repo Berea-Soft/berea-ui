@@ -96,7 +96,6 @@ export default defineConfig({
     sourcemap: true,
   },
   optimizeDeps: {
-    include: ["vue"],
-    exclude: ["**/*.stories.ts", "**/*.test.ts", "node_modules/**"],
+    include: ["vue"]
   },
 });

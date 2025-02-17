@@ -25,22 +25,22 @@
   "typings": "dist/berea-ui.d.ts",
   "exports": {
     ".": {
+      "types": "./dist/berea-ui.d.ts",
       "import": "./dist/berea-ui.es.js",
-      "require": "./dist/berea-ui.cjs",
-      "types": "./dist/berea-ui.d.ts"
+      "require": "./dist/berea-ui.cjs"
     },
     "./berea-ui.css": {
       "import": "./dist/berea-ui.css"
     },
     "./umd": {
+      "types": "./dist/berea-ui.d.ts",
       "import": "./dist/berea-ui.umd.js",
-      "require": "./dist/berea-ui.umd.js",
-      "types": "./dist/berea-ui.d.ts"
+      "require": "./dist/berea-ui.umd.js"
     },
     "./iife": {
+      "types": "./dist/berea-ui.d.ts",
       "import": "./dist/berea-ui.iife.js",
-      "require": "./dist/berea-ui.iife.js",
-      "types": "./dist/berea-ui.d.ts"
+      "require": "./dist/berea-ui.iife.js"
     }
   },
   "keywords": [
@@ -130,5 +130,8 @@
     "not dead",
     "not IE 11",
     "> 1%"
-  ]
+  ],
+  "dependencies": {
+    "@bereaui/berea-ui": "file:"
+  }
 }

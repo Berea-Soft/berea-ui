@@ -1,22 +1,24 @@
 <script setup lang="ts">
-  import { BeButton } from "./components";
-  import { AlarmPlus } from "lucide-vue-next";
+  import { BeSwitch } from "./components";
+  import { Sun, Moon } from "lucide-vue-next";
 </script>
 
 <template>
   <div>componentes</div>
-  <be-button
+  <be-switch :uncheckedIcon="Sun" :checkedIcon="Moon" variant="success" :checked="false" />
+  <!-- <be-button
+  class="max-w-md"
     variant="primary light"
     size="sm"
     outline
     rounded="md"
-    disabled
+    between
     iconSize="lg"
     expanded
-    :iconLeft="AlarmPlus"
+    :iconRight="AlarmPlus"
   >
     Primary
-  </be-button>
+  </be-button> -->
 </template>
 
 <style scoped></style>
