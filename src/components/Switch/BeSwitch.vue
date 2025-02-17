@@ -2,6 +2,7 @@
   import { ref, computed, watch, PropType, useAttrs } from "vue";
   import { cn } from "../../utils/utils";
   import { cva, type VariantProps } from "class-variance-authority";
+  import { processVariant } from "../../utils/helpers";
 
   defineOptions({
     name: "BeSwitch",

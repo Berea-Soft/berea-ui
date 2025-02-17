@@ -10,14 +10,10 @@ declare global {
   const BeIcon: typeof import('./src/components/index')['BeIcon']
   const BeLoading: typeof import('./src/components/index')['BeLoading']
   const BeSwitch: typeof import('./src/components/index')['BeSwitch']
-  const Button: typeof import('./src/components/Button/index')['default']
-  const Icon: typeof import('./src/components/Icon/index')['default']
-  const Loading: typeof import('./src/components/Loading/index')['default']
   const VueInstance: typeof import('./src/utils/config')['VueInstance']
   const cn: typeof import('./src/utils/utils')['cn']
   const components: typeof import('./src/components/index')['default']
   const config: typeof import('./src/utils/config')['config']
-  const dynamicExports: typeof import('./src/components/index')['dynamicExports']
   const getComponent: typeof import('./src/components/index')['getComponent']
   const processVariant: typeof import('./src/utils/helpers')['processVariant']
   const registerComponent: typeof import('./src/utils/plugins')['registerComponent']
@@ -38,11 +34,14 @@ import { UnwrapRef } from 'vue'
 declare module 'vue' {
   interface GlobalComponents {}
   interface ComponentCustomProperties {
+    readonly BeButton: UnwrapRef<typeof import('./src/components/index')['BeButton']>
+    readonly BeIcon: UnwrapRef<typeof import('./src/components/index')['BeIcon']>
+    readonly BeLoading: UnwrapRef<typeof import('./src/components/index')['BeLoading']>
+    readonly BeSwitch: UnwrapRef<typeof import('./src/components/index')['BeSwitch']>
     readonly VueInstance: UnwrapRef<typeof import('./src/utils/config')['VueInstance']>
     readonly cn: UnwrapRef<typeof import('./src/utils/utils')['cn']>
     readonly components: UnwrapRef<typeof import('./src/components/index')['default']>
     readonly config: UnwrapRef<typeof import('./src/utils/config')['config']>
-    readonly dynamicExports: UnwrapRef<typeof import('./src/components/index')['dynamicExports']>
     readonly getComponent: UnwrapRef<typeof import('./src/components/index')['getComponent']>
     readonly processVariant: UnwrapRef<typeof import('./src/utils/helpers')['processVariant']>
     readonly registerComponent: UnwrapRef<typeof import('./src/utils/plugins')['registerComponent']>
