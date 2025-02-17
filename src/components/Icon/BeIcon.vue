@@ -2,11 +2,11 @@
   <component
     v-if="icon"
     :is="icon"
-    :class="iconClass"
+    :class="[iconClass]"
     v-bind="iconProps"
     aria-hidden="true"
   />
-  <span v-else-if="$slots.default" :class="iconClass" aria-hidden="true">
+  <span v-else-if="$slots.default" :class="[iconClass]" aria-hidden="true">
     <slot />
   </span>
   <span v-else class="text-red-500">

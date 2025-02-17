@@ -3,9 +3,13 @@
   import { cn } from "../../utils/utils";
   import { cva, type VariantProps } from "class-variance-authority";
   import { processVariant } from "../../utils/helpers";
+  import BeLoading from "../Loading/BeLoading.vue";
 
   defineOptions({
     name: "BeSwitch",
+    components: {
+      BeLoading,
+    },
   });
 
   type BaseVariant =
@@ -50,6 +54,10 @@
       type: [String, Object],
       default: "",
     },
+    variantLoading: {
+      type: String,
+      default: "text-gray-500",
+    },
   });
 
   const emit = defineEmits(["update:checked", "change"]);
@@ -63,6 +71,7 @@
   const uncheckedIconProps = ref(props.uncheckedIcon);
   const loadingProps = ref(props.loading);
   const disabledProps = ref(props.disabled);
+  const variantLoadingProps = ref(props.variantLoading);
 
   const switchClass = cva(
     "relative inline-flex items-center justify-center w-16 h-6 rounded-full transition-colors duration-300 focus:outline-none",
@@ -128,12 +137,12 @@
   const isDisabled = computed(() => disabledProps.value || loadingProps.value);
 
   const toggleClass = cva(
-    "absolute left-1 w-6 h-6 bg-white rounded-full shadow-md transform transition-transform duration-300",
+    "absolute left-0.5 w-6 h-6 rounded-full bg-white shadow-md transform transition-transform duration-300",
     {
       variants: {
         isChecked: {
           true: "translate-x-9",
-          false: "-translate-x-1",
+          false: "-translate-x-0",
         },
       },
     }
@@ -207,7 +216,9 @@
     v-bind="attrs"
     :class="switchClasses"
   >
-    <span :class="toggleClass({ isChecked: internalChecked })"></span>
+    <span :class="toggleClass({ isChecked: internalChecked })">
+      <be-loading :class="variantLoadingProps" v-if="loadingProps"/>
+    </span>
 
     <span v-if="internalChecked" :class="labelClass({ isChecked: true })">
       <template v-if="checkedIconProps">

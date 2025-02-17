@@ -5,7 +5,7 @@
 
 <template>
   <div>componentes</div>
-  <be-switch :uncheckedIcon="Sun" :checkedIcon="Moon" variant="success" :checked="false" />
+  <be-switch :uncheckedIcon="Sun" :checkedIcon="Moon" variant="success" />
   <!-- <be-button
   class="max-w-md"
     variant="primary light"

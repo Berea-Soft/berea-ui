@@ -1,7 +1,7 @@
 <script lang="ts" setup>
   import { cn } from "../../utils/utils";
   import { cva } from "class-variance-authority";
-  import { computed } from "vue";
+  import { computed, ref, watch } from "vue";
   import BeIcon from "../Icon/BeIcon.vue"; // Importa el componente Icon
 
   defineOptions({
@@ -20,16 +20,31 @@
   });
 
   // Clases de loading
-  const loading = cva("animate-spin h-5 w-5");
+  const classProps = ref(props.class);
+  const loading = cva(
+    "animate-spin animate-infinite animate-ease-linear m-0.5 size-5"
+  );
 
   const loadingClasses = computed(() => {
     return cn(loading(), props.class);
   });
+
+  watch(
+    () => props.class,
+    (newValue) => {
+      classProps.value = newValue;
+    }
+  );
 </script>
 
 <template>
-  <be-icon :class="loadingClasses">
-    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+  <be-icon :class="classProps">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      :class="loadingClasses"
+    >
       <circle
         class="opacity-25"
         cx="12"

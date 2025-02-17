@@ -4,14 +4,7 @@
   "version": "0.0.22",
   "type": "module",
   "files": [
-    "dist",
-    "src",
-    "dist/berea-ui.css",
-    "dist/berea-ui.umd.js",
-    "dist/berea-ui.iife.js",
-    "dist/berea-ui.es.js",
-    "dist/berea-ui.cjs",
-    "dist/berea-ui.d.ts"
+    "dist"
   ],
   "main": "dist/berea-ui.cjs",
   "module": "dist/berea-ui.es.js",
