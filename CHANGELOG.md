@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.24](https://github.com/Berea-Soft/berea-ui/compare/v0.0.23...v0.0.24) (2025-02-18)
+
+
+### Features
+
+* :sparkles: add component divider ([aeb6b6b](https://github.com/Berea-Soft/berea-ui/commit/aeb6b6b95ccbe00c3fd72dcf540b87eb39c5228a))
+
 ### [0.0.23](https://github.com/Berea-Soft/berea-ui/compare/v0.0.22...v0.0.23) (2025-02-17)
 
 
