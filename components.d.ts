@@ -8,6 +8,7 @@ export {}
 declare module 'vue' {
   export interface GlobalComponents {
     BeButton: typeof import('./src/components/Button/BeButton.vue')['default']
+    BeDivider: typeof import('./src/components/Divider/BeDivider.vue')['default']
     BeIcon: typeof import('./src/components/Icon/BeIcon.vue')['default']
     BeLoading: typeof import('./src/components/Loading/BeLoading.vue')['default']
     BeSwitch: typeof import('./src/components/Switch/BeSwitch.vue')['default']

@@ -4,82 +4,19 @@ export default {
   theme: {
     extend: {},
   },
-  plugins: [],
+  plugins: [
+    function ({ addUtilities }) {
+      const newUtilities = {
+        ".border-block-start-custom": {
+          "border-block-start": "0 rgba(5, 5, 5, 0.06)",
+        },
+      };
+      addUtilities(newUtilities);
+    },
+  ],
   safelist: [
     {
-      pattern: /^bg-/,
+      pattern: /^(bg|text|border|h|w|m|p|rounded|shadow|grid-cols|grid-rows|place|gap|flex|justify|items|space|divide|from|via|to|ring|ring-offset|ring-opacity)-/,
     },
-    {
-      pattern: /^text-/,
-    },
-    {
-      pattern: /^border-/,
-    },
-    {
-      pattern: /^h-/,
-    },
-    {
-      pattern: /^w-/,
-    },
-    {
-      pattern: /^m-/,
-    },
-    {
-      pattern: /^p-/,
-    },
-    {
-      pattern: /^rounded-/,
-    },
-    {
-      pattern: /^shadow-/,
-    },
-    {
-      pattern: /^grid-cols-/,
-    },
-    {
-      pattern: /^grid-rows-/,
-    },
-    {
-      pattern: /^place-/,
-    },
-    {
-      pattern: /^gap-/,
-    },
-    {
-      pattern: /^flex-/,
-    },
-    {
-      pattern: /^justify-/,
-    },
-    {
-      pattern: /^items-/,
-    },
-    {
-      pattern: /^space-/,
-    },
-    {
-      pattern: /^divide-/,
-    },
-    {
-      pattern: /^from-/,
-    },
-    {
-      pattern: /^via-/,
-    },
-    {
-      pattern: /^to-/,
-    },
-    {
-      pattern: /^border-/,
-    },
-    {
-      pattern: /^ring-/,
-    },
-    {
-      pattern: /^ring-offset-/,
-    },
-    {
-      pattern: /^ring-opacity-/,
-    }
   ],
 };

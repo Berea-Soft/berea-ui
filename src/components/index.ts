@@ -4,12 +4,14 @@ import BeIcon from "@/components/Icon/BeIcon.vue";
 import BeLoading from "@/components/Loading/BeLoading.vue";
 import BeSwitch from "@/components/Switch/BeSwitch.vue";
 import "../berea-ui.css";
+import BeDivider from "@/components/Divider/BeDivider.vue";
 
 const components: Record<string, any> = {
   BeButton,
   BeIcon,
   BeLoading,
   BeSwitch,
+  BeDivider,
 };
 
 const install: Plugin = (app) => {
@@ -25,6 +27,6 @@ const getComponent = (name: string) => {
   return componentName ? components[componentName] : null;
 };
 
-export { getComponent, BeButton, BeIcon, BeLoading, BeSwitch };
+export { getComponent, BeButton, BeIcon, BeLoading, BeSwitch, BeDivider };
 
 export default install;

@@ -7,6 +7,7 @@
 export {}
 declare global {
   const BeButton: typeof import('./src/components/index')['BeButton']
+  const BeDivider: typeof import('./src/components/index')['BeDivider']
   const BeIcon: typeof import('./src/components/index')['BeIcon']
   const BeLoading: typeof import('./src/components/index')['BeLoading']
   const BeSwitch: typeof import('./src/components/index')['BeSwitch']
@@ -35,6 +36,7 @@ declare module 'vue' {
   interface GlobalComponents {}
   interface ComponentCustomProperties {
     readonly BeButton: UnwrapRef<typeof import('./src/components/index')['BeButton']>
+    readonly BeDivider: UnwrapRef<typeof import('./src/components/index')['BeDivider']>
     readonly BeIcon: UnwrapRef<typeof import('./src/components/index')['BeIcon']>
     readonly BeLoading: UnwrapRef<typeof import('./src/components/index')['BeLoading']>
     readonly BeSwitch: UnwrapRef<typeof import('./src/components/index')['BeSwitch']>

@@ -56,6 +56,7 @@
     "release:major": "standard-version --release-as major",
     "release:minor": "standard-version --release-as minor",
     "release:patch": "standard-version --release-as patch",
+    "css:minify": "npx tailwindcss -i ./src/berea-ui.css -o ./dist/berea-ui.css --minify",
     "publish:npm": "npm publish",
     "publish:local": "npm pack",
     "postrelease": "git push --follow-tags origin main && npm publish",
